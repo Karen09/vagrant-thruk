@@ -3,7 +3,7 @@
 
 ## Vagrant Up
 
-* **git clone repo**
+* **git clone https://github.com/Karen09/vagrant-thruk.git**
 * **cd vagrant-thrul/**
 * **git submodule update --init**
 * **vagrant up**
