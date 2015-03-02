@@ -1,0 +1,12 @@
+[submodule "puppet/modules/mysql"]
+	path = puppet/modules/mysql
+	url = https://github.com/puppetlabs/puppetlabs-mysql.git
+[submodule "puppet/modules/apache"]
+	path = puppet/modules/apache
+	url = https://github.com/puppetlabs/puppetlabs-apache.git
+[submodule "puppet/modules/yum"]
+	path = puppet/modules/yum
+	url = https://github.com/thbe/puppet-yum.git
+[submodule "puppet/modules/icinga"]
+	path = puppet/modules/icinga
+	url = https://github.com/thbe/puppet-icinga.git
