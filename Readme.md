@@ -7,3 +7,11 @@
 * **cd vagrant-thrul/**
 * **git submodule update --init**
 * **vagrant up**
+
+* **http://192.168.33.44/icinga/     icinga-classic web-interface**
+* **login   :icingaadmin**
+* **passwrd :icingaadmin**
+
+* **http://192.168.33.44/thruk/      thruk web-interface**
+* **login   :thrukadmin**
+* **passwrd :thrukadmin**
