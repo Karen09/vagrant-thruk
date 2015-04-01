@@ -42,7 +42,7 @@ class profiles::icinga{
     path    => '/etc/icinga/modules/thruk.cfg',
     ensure  => 'file',
     owner   => 'icinga',
-    content => template('/tmp/vagrant-puppet/modules-251f4c8fee528187fce2a500fc206569/profiles/template/thruk.cfg.erb'),
-    require => package['icinga-idoutils'],
+    content => template('profiles/thruk.cfg.erb'),
+    require => Package['icinga-idoutils'],
   }
 }

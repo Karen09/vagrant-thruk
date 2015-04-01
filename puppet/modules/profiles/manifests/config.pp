@@ -15,7 +15,7 @@ class profiles::config {
   file {'thruk.conf':
     path    => '/etc/thruk/thruk.conf',
     ensure  => 'file',
-    content => template('/tmp/vagrant-puppet/modules-251f4c8fee528187fce2a500fc206569/profiles/template/thruk.conf.erb'),
+    content => template('profiles/thruk.conf.erb'),
   }
 
 }

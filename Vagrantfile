@@ -13,7 +13,7 @@ Vagrant.configure(2) do |config|
 # Global provisioning settings                                                #
 ###############################################################################
   config.vm.synced_folder 'hiera', '/var/lib/hiera'
-
+  config.vm.hostname = "thruk"
   config.vm.provision "puppet" do |puppet|
     puppet.manifests_path = "puppet/environments/development/manifests/"
     puppet.module_path = "puppet/modules"
