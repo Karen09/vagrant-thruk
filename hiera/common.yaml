@@ -1,2 +1,4 @@
 classes:
   - roles::thruk
+
+thruk::peer_path: /usr/local/icinga/var/rw/live

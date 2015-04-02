@@ -6,11 +6,7 @@ class profiles::service {
     ensure  => present,
     mode    => '0777',
     require => Service['ido2db'],
-  }  
-
-  service  {'thruk':
-    ensure  => running,
-    require => File['mk-live'],
+    notify  => Service['thruk'],
   }
 
   service {'ido2db':

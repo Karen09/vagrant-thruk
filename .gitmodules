@@ -7,3 +7,6 @@
 [submodule "puppet/modules/staging"]
 	path = puppet/modules/staging
 	url = https://github.com/nanliu/puppet-staging.git
+[submodule "puppet/modules/thruk"]
+	path = puppet/modules/thruk
+	url = https://github.com/Karen09/puppet-thruk.git

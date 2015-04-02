@@ -1,48 +1,50 @@
-class profiles::icinga{
+class profiles::icinga {
 
-  yumrepo  {'icinga':
+  yumrepo  {'icinga-repo':
     baseurl  => 'http://packages.icinga.org/epel/6Server/release/',
     gpgcheck => '0',
     enabled  => '1',
   }
 
   package {'icinga':
-    require =>Yumrepo['icinga'],
-  }
-
-  package {'icinga-debuginfo':
-    require =>Package['icinga'],
-  }
-
-  package {'icinga-devel':
-    require =>Package['icinga-debuginfo'],
-  }
-
-  package {'icinga-doc':
-    require =>Package['icinga-devel'],
-  }
-
-  package {'icinga-gui-config':
-    require =>Package['icinga-doc'],
-  }
-
-  package {'icinga-gui':
-    require =>Package['icinga-gui-config'],
+    require => Yumrepo['icinga-repo'],
   }
 
   package {'icinga-idoutils-libdbi-mysql':
-    require =>Package['icinga-gui'],
+    require => Package['icinga'],
+  }
+
+  package {'icinga-gui-config':
+    require => Package['icinga-idoutils-libdbi-mysql'],
+  }
+
+  package {'icinga-doc':
+    require => Package['icinga-gui-config'],
+  }
+
+  package {'icinga-gui':
+    require => Package['icinga-doc'],
   }
 
   package {'icinga-idoutils':
-    require =>Package['icinga-idoutils-libdbi-mysql'],
+    require => Package['icinga-gui'],
+  }
+
+  package {'icinga-devel':
+    require => Package['icinga-idoutils'],
+  }
+
+  package {'icinga-debuginfo':
+    require => Package['icinga-devel'],
   }
 
   file {'thruk.cfg':
     path    => '/etc/icinga/modules/thruk.cfg',
     ensure  => 'file',
     owner   => 'icinga',
-    content => template('/tmp/vagrant-puppet/modules-251f4c8fee528187fce2a500fc206569/profiles/template/thruk.cfg.erb'),
-    require => package['icinga-idoutils'],
+    content => template('profiles/thruk.cfg.erb'),
+    require => Package['icinga-debuginfo'],
+    notify  => Service['icinga'],
   }
+
 }

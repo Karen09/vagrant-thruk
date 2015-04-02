@@ -1,18 +1,21 @@
 class profiles::thruk {
 
-  include profiles::icinga
-  include profiles::nagios
-  include profiles::mod_fcgid
-  include profiles::mysql
-  include profiles::install
-  include profiles::config
-  include profiles::service
+  contain profiles::icinga
+  
+  contain profiles::mysql
+  
+  contain profiles::config
+  
+  contain ::thruk
+  
+  contain profiles::service
 
-  Class['profiles::icinga'] ->
-  Class['profiles::nagios'] ->
-  Class['profiles::mod_fcgid'] ->
-  Class['profiles::install'] ->
-  Class['profiles::mysql'] ->
-  Class['profiles::config'] ->
+  contain profiles::packages
+
+  Class['profiles::icinga']   ->
+  Class['profiles::packages'] ->
+  Class['profiles::mysql']    ->
+  Class['profiles::config']   ->
+  Class['::thruk']            ->
   Class['profiles::service']
 }
