@@ -15,3 +15,6 @@
 * **http://192.168.33.44/thruk/      thruk web-interface**
 * **login   :thrukadmin**
 * **passwrd :thrukadmin**
+
+##Info
+* **Use "test" branch for testing Karen09/puppet-thruk module**
