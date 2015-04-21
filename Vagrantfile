@@ -1,4 +1,4 @@
-#vagrant rkhunter
+#vagrant Thruk
 
 
 Vagrant.configure(2) do |config|
